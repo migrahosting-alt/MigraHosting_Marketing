@@ -1,0 +1,24 @@
+{
+  "name": "MigraHosting",
+  "short_name": "MigraHosting",
+  "icons": [
+    {
+      "src": "/favicon.svg?v=2",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "type": "image/png",
+      "sizes": "180x180"
+    },
+    {
+      "src": "/favicon.ico",
+      "type": "image/x-icon",
+      "sizes": "64x64 32x32 16x16"
+    }
+  ],
+  "theme_color": "#0B1020",
+  "background_color": "#0B1020",
+  "display": "standalone"
+}

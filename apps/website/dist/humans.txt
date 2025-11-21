@@ -1,0 +1,23 @@
+# Humans.txt - The team behind MigraHosting
+
+/* TEAM */
+
+Website: www.migrahosting.com
+Location: Tamarac, Florida, USA
+Company: MigraTeck LLC
+
+/* THANKS */
+
+To our customers: Thank you for trusting us with your hosting!
+To open source: Built with React, Vite, Tailwind CSS, and love
+
+/* SITE */
+
+Last update: 2025/11/17
+Language: English
+Doctype: HTML5
+IDE: Visual Studio Code
+Standards: HTML5, CSS3, ES2024
+Components: React 18, TypeScript, Tailwind CSS
+Backend: Node.js, Express, Stripe
+Infrastructure: NVMe SSD, HTTP/3, CloudFlare

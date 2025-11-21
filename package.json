@@ -1,0 +1,50 @@
+{
+  "name": "migrahosting-monorepo",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "packageManager": "yarn@4.3.1",
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "mpanel-main/mpanel-main",
+    "mpanel-main/mpanel-main/frontend"
+  ],
+  "scripts": {
+    "dev:website": "node ./.yarn/releases/yarn-4.3.1.cjs workspace @migrahosting/website dev",
+    "build:website": "node ./.yarn/releases/yarn-4.3.1.cjs workspace @migrahosting/website build",
+    "preview:website": "node ./.yarn/releases/yarn-4.3.1.cjs workspace @migrahosting/website preview",
+    "server:dev": "node ./.yarn/releases/yarn-4.3.1.cjs node mpanel-main/mpanel-main/src/server.js",
+    "dev": "node ./.yarn/releases/yarn-4.3.1.cjs workspace @migrahosting/website dev",
+    "build": "node ./.yarn/releases/yarn-4.3.1.cjs workspace @migrahosting/website build",
+    "deploy:srv1": "bash ~/deploy_migra_marketing_to_srv1.sh",
+    "dev:full": "concurrently \"node ./.yarn/releases/yarn-4.3.1.cjs server:dev\" \"node ./.yarn/releases/yarn-4.3.1.cjs workspace @migrahosting/website dev\""
+  },
+  "dependencies": {
+    "@prisma/client": "^6.19.0",
+    "@stripe/react-stripe-js": "^5.3.0",
+    "@stripe/stripe-js": "^8.4.0",
+    "bcrypt": "^6.0.0",
+    "better-sqlite3": "^12.4.1",
+    "body-parser": "^2.2.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.2.1",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "node-fetch": "^3.3.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-helmet-async": "^2.0.5",
+    "react-router-dom": "^7.9.6",
+    "stripe": "^19.3.1",
+    "uuid": "^13.0.0",
+    "ws": "^8.18.0",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  }
+}

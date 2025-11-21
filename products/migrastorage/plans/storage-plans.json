@@ -1,0 +1,183 @@
+{
+  "plans": [
+    {
+      "id": "personal",
+      "name": "Personal",
+      "tagline": "For individuals",
+      "description": "Store your photos, documents, and personal files securely.",
+      "pricing": {
+        "monthly": "4.95",
+        "annually": "3.95"
+      },
+      "pricingTotals": {
+        "annually": "47.40"
+      },
+      "features": {
+        "storage": "250 GB",
+        "bandwidth": "2 TB/mo transfer",
+        "users": "1 user",
+        "s3": "S3-compatible API",
+        "webui": "MigraDrive web interface",
+        "versioning": "30-day file versioning"
+      },
+      "highlights": [
+        "250 GB storage",
+        "2 TB/mo transfer",
+        "1 user account",
+        "MigraDrive web interface",
+        "Desktop sync client (Windows, Mac, Linux)",
+        "Mobile apps (iOS, Android)",
+        "S3-compatible API access",
+        "30-day file versioning",
+        "Encryption at rest & in transit",
+        "Share links with password protection",
+        "99.9% uptime SLA"
+      ]
+    },
+    {
+      "id": "team",
+      "name": "Team",
+      "tagline": "Most popular",
+      "description": "Collaboration and file sharing for small teams.",
+      "pricing": {
+        "monthly": "9.95",
+        "annually": "8.45"
+      },
+      "pricingTotals": {
+        "annually": "101.40"
+      },
+      "features": {
+        "storage": "1 TB",
+        "bandwidth": "5 TB/mo transfer",
+        "users": "Up to 5 users",
+        "s3": "S3-compatible API",
+        "webui": "MigraDrive web interface",
+        "versioning": "60-day file versioning"
+      },
+      "highlights": [
+        "1 TB storage",
+        "5 TB/mo transfer",
+        "Up to 5 user accounts",
+        "MigraDrive web interface",
+        "Desktop sync client (Windows, Mac, Linux)",
+        "Mobile apps (iOS, Android)",
+        "S3-compatible API access",
+        "60-day file versioning",
+        "Encryption at rest & in transit",
+        "Team folders & permissions",
+        "Share links with password & expiration",
+        "Activity logs",
+        "Priority support",
+        "99.9% uptime SLA"
+      ],
+      "popular": true
+    },
+    {
+      "id": "business",
+      "name": "Business",
+      "tagline": "For growing teams",
+      "description": "Enterprise-grade storage with advanced collaboration tools.",
+      "pricing": {
+        "monthly": "24.95",
+        "annually": "19.95"
+      },
+      "pricingTotals": {
+        "annually": "239.40"
+      },
+      "features": {
+        "storage": "3 TB",
+        "bandwidth": "10 TB/mo transfer",
+        "users": "Up to 15 users",
+        "s3": "S3-compatible API",
+        "webui": "MigraDrive web interface",
+        "versioning": "90-day file versioning"
+      },
+      "highlights": [
+        "3 TB storage",
+        "10 TB/mo transfer",
+        "Up to 15 user accounts",
+        "MigraDrive web interface",
+        "Desktop sync client (Windows, Mac, Linux)",
+        "Mobile apps (iOS, Android)",
+        "S3-compatible API access",
+        "90-day file versioning",
+        "Encryption at rest & in transit",
+        "Team folders & granular permissions",
+        "Share links with password & expiration",
+        "Activity logs & audit trails",
+        "Admin dashboard",
+        "Priority support + phone support",
+        "99.95% uptime SLA",
+        "Automatic hosting/VPS backup integration"
+      ]
+    }
+  ],
+  "allPlansInclude": [
+    "MigraDrive web interface (modern, responsive)",
+    "Desktop sync client (Windows, Mac, Linux)",
+    "Mobile apps (iOS, Android)",
+    "S3-compatible API (for apps & backups)",
+    "File versioning (30-90 days)",
+    "Encryption at rest & in transit",
+    "Share links with password protection",
+    "99.9%+ uptime SLA",
+    "Integrated with Migra hosting ecosystem",
+    "No per-user fees (pay for storage only)",
+    "No setup fees",
+    "24/7 support"
+  ],
+  "useCases": [
+    {
+      "title": "Personal Backups",
+      "description": "Store photos, documents, and personal files. Access from any device.",
+      "icon": "user"
+    },
+    {
+      "title": "Team Collaboration",
+      "description": "Share client deliverables, design files, and project documents with team permissions.",
+      "icon": "users"
+    },
+    {
+      "title": "Developer Storage",
+      "description": "Use S3-compatible API for app assets, backups, and object storage.",
+      "icon": "code"
+    },
+    {
+      "title": "Hosting Backups",
+      "description": "Automatically back up your MigraHosting, MigraWP, and VPS to MigraDrive.",
+      "icon": "server"
+    }
+  ],
+  "vsCompetitors": {
+    "dropbox": {
+      "title": "MigraDrive vs Dropbox",
+      "advantages": [
+        "60% lower cost for business plans",
+        "No per-user fees (pay for storage only)",
+        "Better privacy (no data mining)",
+        "Integrated with hosting/VPS backups",
+        "S3-compatible API for developers"
+      ]
+    },
+    "googleDrive": {
+      "title": "MigraDrive vs Google Drive",
+      "advantages": [
+        "Better privacy (no ads, no data scanning)",
+        "S3-compatible API access",
+        "Integrated with Migra hosting ecosystem",
+        "No forced bundling (just storage, not entire suite)",
+        "Better support for small teams"
+      ]
+    },
+    "awsS3": {
+      "title": "MigraDrive vs AWS S3",
+      "advantages": [
+        "Simpler pricing (flat monthly rate, not per-GB)",
+        "No egress fees for transfers",
+        "Easier to use (web UI + sync clients)",
+        "Better for non-technical users",
+        "Integrated with hosting/VPS backups"
+      ]
+    }
+  }
+}

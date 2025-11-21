@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head><title>Creating OG Image...</title></head>
+<body>
+<canvas id="c" width="1200" height="630"></canvas>
+<script>
+const c = document.getElementById('c');
+const ctx = c.getContext('2d');
+
+// Background
+const bg = ctx.createLinearGradient(0, 0, 1200, 630);
+bg.addColorStop(0, '#0f172a');
+bg.addColorStop(0.5, '#1e293b');
+bg.addColorStop(1, '#0a0a0a');
+ctx.fillStyle = bg;
+ctx.fillRect(0, 0, 1200, 630);
+
+// Logo circle
+const lg = ctx.createLinearGradient(110, 245, 250, 385);
+lg.addColorStop(0, '#6A5CFF');
+lg.addColorStop(0.6, '#8A4DFF');
+lg.addColorStop(1, '#FF6584');
+ctx.fillStyle = lg;
+ctx.beginPath();
+ctx.arc(180, 315, 70, 0, Math.PI * 2);
+ctx.fill();
+
+// M letter
+ctx.fillStyle = '#fff';
+ctx.font = 'bold 80px Arial';
+ctx.textAlign = 'center';
+ctx.fillText('M', 180, 340);
+
+// Title
+ctx.font = 'bold 72px Arial';
+ctx.textAlign = 'left';
+ctx.fillText('MigraHosting', 300, 240);
+
+// Tagline
+const tg = ctx.createLinearGradient(300, 0, 900, 0);
+tg.addColorStop(0, '#6A5CFF');
+tg.addColorStop(0.5, '#8A4DFF');
+tg.addColorStop(1, '#FF6584');
+ctx.fillStyle = tg;
+ctx.font = 'bold 48px Arial';
+ctx.fillText('Lightning-Fast NVMe Hosting', 300, 330);
+
+// Subtitle
+ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+ctx.font = '36px Arial';
+ctx.fillText('From $1.49/mo • Free SSL • Free Migration', 300, 400);
+
+// Auto download
+setTimeout(() => {
+  c.toBlob(blob => {
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'og-image.png';
+    a.click();
+    document.body.innerHTML = '<h1 style="color:green;text-align:center;font-family:sans-serif;margin-top:200px">✅ og-image.png downloaded!<br><small>Move it to the public folder</small></h1>';
+  });
+}, 500);
+</script>
+</body>
+</html>

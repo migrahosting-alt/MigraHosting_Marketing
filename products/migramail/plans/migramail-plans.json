@@ -1,0 +1,160 @@
+{
+  "plans": [
+    {
+      "id": "basic",
+      "name": "MigraMail Basic",
+      "tagline": "Essential email",
+      "description": "Professional email for individuals and small teams.",
+      "pricing": {
+        "monthly": "1.50",
+        "annually": "1.20"
+      },
+      "pricingTotals": {
+        "annually": "14.40"
+      },
+      "perMailbox": true,
+      "features": {
+        "storage": "10 GB per mailbox",
+        "webmail": "Modern webmail interface",
+        "protocols": "IMAP, POP3, SMTP",
+        "mobile": "Mobile app support",
+        "spam": "Basic spam filtering",
+        "support": "Email support"
+      },
+      "highlights": [
+        "10 GB storage per mailbox",
+        "Custom domain email",
+        "Modern webmail interface",
+        "IMAP/POP3/SMTP access",
+        "Mobile app compatible",
+        "SPF/DKIM/DMARC configured",
+        "Basic spam filtering (MigraGuard)",
+        "99.9% uptime SLA",
+        "Contacts & calendar sync",
+        "Email forwarding & aliases"
+      ]
+    },
+    {
+      "id": "pro",
+      "name": "MigraMail Pro",
+      "tagline": "Most popular",
+      "description": "Advanced features for businesses and power users.",
+      "pricing": {
+        "monthly": "2.50",
+        "annually": "2.00"
+      },
+      "pricingTotals": {
+        "annually": "24.00"
+      },
+      "perMailbox": true,
+      "features": {
+        "storage": "25 GB per mailbox",
+        "webmail": "Modern webmail + calendar/tasks",
+        "protocols": "IMAP, POP3, SMTP, ActiveSync",
+        "mobile": "Full mobile sync (ActiveSync)",
+        "spam": "Advanced spam & malware filtering",
+        "support": "Priority 24/7 support"
+      },
+      "highlights": [
+        "25 GB storage per mailbox",
+        "Custom domain email",
+        "Modern webmail interface",
+        "IMAP/POP3/SMTP/ActiveSync",
+        "Full mobile sync (calendar, contacts, tasks)",
+        "SPF/DKIM/DMARC configured",
+        "Advanced spam & malware filtering",
+        "99.9% uptime SLA",
+        "Shared calendars & address books",
+        "Email forwarding & aliases",
+        "Priority support queue",
+        "Archive & retention policies"
+      ],
+      "popular": true
+    },
+    {
+      "id": "business",
+      "name": "MigraMail Business",
+      "tagline": "For teams",
+      "description": "Enterprise-grade email with advanced collaboration tools.",
+      "pricing": {
+        "monthly": "3.50",
+        "annually": "3.00"
+      },
+      "pricingTotals": {
+        "annually": "36.00"
+      },
+      "perMailbox": true,
+      "features": {
+        "storage": "50 GB per mailbox",
+        "webmail": "Full collaboration suite",
+        "protocols": "IMAP, POP3, SMTP, ActiveSync, EAS",
+        "mobile": "Full mobile & desktop sync",
+        "spam": "Enterprise spam & malware protection",
+        "support": "24/7 phone + dedicated support"
+      },
+      "highlights": [
+        "50 GB storage per mailbox",
+        "Custom domain email",
+        "Full collaboration suite (webmail, calendar, tasks, notes)",
+        "IMAP/POP3/SMTP/ActiveSync/EAS",
+        "Full mobile & desktop sync",
+        "SPF/DKIM/DMARC configured",
+        "Enterprise spam & malware protection",
+        "99.9% uptime SLA",
+        "Shared calendars, address books, tasks",
+        "Team resource booking (rooms, equipment)",
+        "Email forwarding, aliases, distribution lists",
+        "Archive & retention policies",
+        "Priority support + phone support",
+        "Dedicated account manager (10+ mailboxes)"
+      ]
+    }
+  ],
+  "allPlansInclude": [
+    "Custom domain email (you@yourbusiness.com)",
+    "SPF, DKIM, DMARC auto-configured",
+    "Dedicated mail server (mail.migrahosting.com)",
+    "Webmail interface (modern, responsive)",
+    "IMAP/POP3/SMTP access",
+    "Mobile app compatibility",
+    "Spam & malware filtering (MigraGuard)",
+    "Email forwarding & aliases",
+    "Contacts & calendar sync",
+    "99.9% uptime SLA",
+    "Easy migration from Gmail/Outlook",
+    "No setup fees",
+    "24/7 support"
+  ],
+  "vsCompetitors": {
+    "googleWorkspace": {
+      "title": "MigraMail vs Google Workspace",
+      "advantages": [
+        "60% lower cost for small teams",
+        "No vendor lock-in (standard IMAP/SMTP)",
+        "Better privacy (no data mining for ads)",
+        "Easy migration tools",
+        "Dedicated mail server (not shared)"
+      ]
+    },
+    "microsoft365": {
+      "title": "MigraMail vs Microsoft 365",
+      "advantages": [
+        "50% cheaper for email-only needs",
+        "Simpler pricing (per mailbox, not per user)",
+        "Better support for small teams",
+        "No forced bundling (just email, no Office)",
+        "Standard protocols (works with any client)"
+      ]
+    },
+    "zoho": {
+      "title": "MigraMail vs Zoho Mail",
+      "advantages": [
+        "Better deliverability (dedicated server)",
+        "Faster support response times",
+        "Integrated with Migra hosting ecosystem",
+        "Better spam filtering (MigraGuard)",
+        "More storage on Pro/Business plans"
+      ]
+    }
+  }
+}

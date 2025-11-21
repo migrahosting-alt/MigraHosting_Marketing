@@ -1,0 +1,9 @@
+nohup: ignoring input
+
+  VITE v7.2.2  ready in 215 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: http://10.255.255.254:5173/
+  ➜  Network: http://172.30.253.221:5173/
+11:56:13 AM [vite] (client) hmr update /src/pages/Home.jsx, /src/index.css
+11:56:13 AM [vite] (client) hmr update /src/pages/Home.jsx, /src/index.css

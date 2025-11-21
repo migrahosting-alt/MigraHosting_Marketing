@@ -1,0 +1,16 @@
+✅ Database connected
+Redis client connected
+✅ Redis connected
+✅ MinIO bucket exists: marketing-cms
+
+╔══════════════════════════════════════════╗
+║   MigraHosting CMS Backend API Ready     ║
+╚══════════════════════════════════════════╝
+
+🚀 Server running on: http://localhost:4243
+📚 Public API: http://localhost:4243/api/cms/public
+🔐 Admin API: http://localhost:4243/api/cms/admin
+💚 Health check: http://localhost:4243/api/cms/health
+
+Environment: development
+      

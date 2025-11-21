@@ -1,0 +1,267 @@
+{
+  "vpsPlans": [
+    {
+      "id": "vps-essential",
+      "name": "VPS Essential",
+      "tagline": "Perfect for testing & small projects",
+      "description": "Entry-level VPS for development and testing.",
+      "pricing": {
+        "monthly": "7.95",
+        "annually": "6.95"
+      },
+      "pricingTotals": {
+        "annually": "83.40"
+      },
+      "specs": {
+        "cpu": "1 vCPU",
+        "ram": "2 GB RAM",
+        "storage": "40 GB NVMe SSD",
+        "bandwidth": "2 TB/mo",
+        "ipv4": "1 IPv4 address",
+        "ipv6": "IPv6 included"
+      },
+      "highlights": [
+        "1 vCPU (dedicated)",
+        "2 GB RAM",
+        "40 GB NVMe SSD storage",
+        "2 TB bandwidth/mo",
+        "1 IPv4 + IPv6",
+        "Root/sudo access",
+        "Choice of OS (Ubuntu, Debian, CentOS, Rocky Linux)",
+        "KVM virtualization",
+        "99.9% uptime SLA",
+        "Daily Proxmox snapshots (3-day retention)",
+        "mPanel VPS management"
+      ]
+    },
+    {
+      "id": "vps-plus",
+      "name": "VPS Plus",
+      "tagline": "Most popular",
+      "description": "Great for production sites and small databases.",
+      "pricing": {
+        "monthly": "14.95",
+        "annually": "12.95"
+      },
+      "pricingTotals": {
+        "annually": "155.40"
+      },
+      "specs": {
+        "cpu": "2 vCPUs",
+        "ram": "4 GB RAM",
+        "storage": "80 GB NVMe SSD",
+        "bandwidth": "4 TB/mo",
+        "ipv4": "1 IPv4 address",
+        "ipv6": "IPv6 included"
+      },
+      "highlights": [
+        "2 vCPUs (dedicated)",
+        "4 GB RAM",
+        "80 GB NVMe SSD storage",
+        "4 TB bandwidth/mo",
+        "1 IPv4 + IPv6",
+        "Root/sudo access",
+        "Choice of OS + Windows available (+$10/mo)",
+        "KVM virtualization",
+        "99.9% uptime SLA",
+        "Daily Proxmox snapshots (7-day retention)",
+        "Optional managed services",
+        "mPanel VPS management"
+      ],
+      "popular": true
+    },
+    {
+      "id": "vps-pro",
+      "name": "VPS Pro",
+      "tagline": "High performance",
+      "description": "For demanding applications and multiple services.",
+      "pricing": {
+        "monthly": "29.95",
+        "annually": "24.95"
+      },
+      "pricingTotals": {
+        "annually": "299.40"
+      },
+      "specs": {
+        "cpu": "4 vCPUs",
+        "ram": "8 GB RAM",
+        "storage": "160 GB NVMe SSD",
+        "bandwidth": "5 TB/mo",
+        "ipv4": "1 IPv4 address",
+        "ipv6": "IPv6 included"
+      },
+      "highlights": [
+        "4 vCPUs (dedicated)",
+        "8 GB RAM",
+        "160 GB NVMe SSD storage",
+        "5 TB bandwidth/mo",
+        "1 IPv4 + IPv6 (additional IPs available)",
+        "Root/sudo access",
+        "Choice of OS + Windows available (+$15/mo)",
+        "KVM virtualization",
+        "99.9% uptime SLA",
+        "Daily Proxmox snapshots (14-day retention)",
+        "Priority support",
+        "Optional managed services",
+        "mPanel VPS management"
+      ]
+    }
+  ],
+  "cloudPlans": [
+    {
+      "id": "cloud-start",
+      "name": "MigraCloud Start",
+      "tagline": "Reliable cloud hosting for production",
+      "description": "Better uptime & scaling for APIs and SaaS.",
+      "pricing": {
+        "monthly": "19.95",
+        "annually": "16.95"
+      },
+      "pricingTotals": {
+        "annually": "203.40"
+      },
+      "specs": {
+        "cpu": "2 vCPUs",
+        "ram": "4 GB RAM",
+        "storage": "80 GB NVMe SSD",
+        "bandwidth": "3 TB/mo",
+        "ipv4": "1 IPv4 address",
+        "ipv6": "IPv6 included"
+      },
+      "highlights": [
+        "2 vCPUs (dedicated)",
+        "4 GB RAM",
+        "80 GB NVMe SSD storage",
+        "3 TB bandwidth/mo",
+        "1 IPv4 + IPv6",
+        "Root/sudo access",
+        "Better uptime & scaling",
+        "Ideal for APIs & SaaS",
+        "Always-on workloads",
+        "99.95% uptime SLA",
+        "Managed snapshots",
+        "24/7 monitoring"
+      ]
+    },
+    {
+      "id": "cloud-scale",
+      "name": "MigraCloud Scale",
+      "tagline": "Scale your production workloads",
+      "description": "High-availability cloud for mission-critical apps.",
+      "pricing": {
+        "monthly": "39.95",
+        "annually": "32.95"
+      },
+      "pricingTotals": {
+        "annually": "395.40"
+      },
+      "specs": {
+        "cpu": "4 vCPUs",
+        "ram": "8 GB RAM",
+        "storage": "160 GB NVMe SSD",
+        "bandwidth": "5 TB/mo",
+        "ipv4": "2 IPv4 addresses",
+        "ipv6": "IPv6 included"
+      },
+      "highlights": [
+        "4 vCPUs (dedicated)",
+        "8 GB RAM",
+        "160 GB NVMe SSD storage",
+        "5 TB bandwidth/mo",
+        "2 IPv4 + IPv6",
+        "Root/sudo access",
+        "Better uptime & scaling",
+        "Ideal for APIs & SaaS",
+        "Multi-region ready",
+        "99.99% uptime SLA",
+        "Managed snapshots + backups",
+        "API access + monitoring",
+        "Priority support"
+      ],
+      "popular": true
+    },
+    {
+      "id": "cloud-enterprise",
+      "name": "MigraCloud Enterprise",
+      "tagline": "Enterprise-grade infrastructure",
+      "description": "Maximum power for high-traffic enterprise applications.",
+      "pricing": {
+        "monthly": "79.95",
+        "annually": "64.95"
+      },
+      "pricingTotals": {
+        "annually": "779.40"
+      },
+      "specs": {
+        "cpu": "8 vCPUs",
+        "ram": "16 GB RAM",
+        "storage": "320 GB NVMe SSD",
+        "bandwidth": "6 TB/mo",
+        "ipv4": "2 IPv4 addresses",
+        "ipv6": "IPv6 included"
+      },
+      "highlights": [
+        "8 vCPUs (dedicated)",
+        "16 GB RAM",
+        "320 GB NVMe SSD storage",
+        "6 TB bandwidth/mo",
+        "2 IPv4 + IPv6 (additional IPs available)",
+        "Root/sudo access",
+        "Enterprise uptime & scaling",
+        "Multi-region deployment",
+        "Load balancing ready",
+        "99.99% uptime SLA",
+        "Managed snapshots + backups",
+        "API access + Kubernetes ready",
+        "Dedicated account manager",
+        "Priority phone support"
+      ]
+    }
+  ],
+  "allPlansInclude": [
+    "NVMe SSD storage (3x faster than SATA)",
+    "Proxmox-powered KVM virtualization",
+    "Root/sudo access",
+    "Choice of OS (Linux distros + Windows)",
+    "Daily automated snapshots",
+    "99.9%+ uptime SLA",
+    "IPv4 + IPv6 included",
+    "DDoS protection (basic)",
+    "mPanel VPS/Cloud management",
+    "API access for automation",
+    "No setup fees",
+    "24/7 support"
+  ],
+  "vsCompetitors": {
+    "digitalocean": {
+      "title": "MigraVPS vs DigitalOcean",
+      "advantages": [
+        "More predictable pricing (no surprise bandwidth charges)",
+        "Better support (not just docs and tickets)",
+        "Integrated with Migra hosting ecosystem",
+        "Managed options available",
+        "Longer snapshot retention"
+      ]
+    },
+    "linode": {
+      "title": "MigraVPS vs Linode (Akamai)",
+      "advantages": [
+        "Simpler pricing structure",
+        "Better support for non-technical users",
+        "mPanel integration (easier management)",
+        "Managed services available",
+        "No hidden fees"
+      ]
+    },
+    "vultr": {
+      "title": "MigraVPS vs Vultr",
+      "advantages": [
+        "Better support response times",
+        "Proxmox-based (more reliable than OpenStack)",
+        "Integrated backups (not extra cost)",
+        "Managed options for hands-off users",
+        "Part of full hosting ecosystem"
+      ]
+    }
+  }
+}

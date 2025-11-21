@@ -1,0 +1,228 @@
+{
+  "plans": [
+    {
+      "id": "starter",
+      "name": "Starter",
+      "tagline": "Perfect for bloggers",
+      "description": "Everything you need for a single WordPress site. We handle updates, backups, and security.",
+      "pricing": {
+        "monthly": "11.95",
+        "annually": "8.95",
+        "biennially": "7.95",
+        "triennially": "6.95"
+      },
+      "pricingTotals": {
+        "annually": "107.40",
+        "biennially": "190.80",
+        "triennially": "250.20"
+      },
+      "features": {
+        "sites": "1 WordPress site",
+        "visits": "Up to 25,000 visits/mo",
+        "storage": "20 GB NVMe SSD",
+        "bandwidth": "Unmetered",
+        "ssl": "Free SSL certificate",
+        "backups": "7-day daily backups",
+        "staging": "1 staging environment",
+        "support": "24/7 email & chat"
+      },
+      "highlights": [
+        "1 WordPress site",
+        "25,000 visits/mo",
+        "20 GB NVMe SSD storage",
+        "Unmetered bandwidth",
+        "Free SSL certificate",
+        "7-day daily backups",
+        "1 staging environment",
+        "Automatic core updates",
+        "Plugin & theme updates",
+        "MigraGuard WordPress hardening",
+        "OpenLiteSpeed server",
+        "WP-CLI access"
+      ]
+    },
+    {
+      "id": "growth",
+      "name": "Growth",
+      "tagline": "Most popular",
+      "description": "For growing sites and small businesses. More resources and better performance.",
+      "pricing": {
+        "monthly": "16.95",
+        "annually": "12.95",
+        "biennially": "11.45",
+        "triennially": "9.95"
+      },
+      "pricingTotals": {
+        "annually": "155.40",
+        "biennially": "274.80",
+        "triennially": "358.20"
+      },
+      "features": {
+        "sites": "3 WordPress sites",
+        "visits": "Up to 100,000 visits/mo",
+        "storage": "50 GB NVMe SSD",
+        "bandwidth": "Unmetered",
+        "ssl": "Free SSL certificates",
+        "backups": "14-day daily backups",
+        "staging": "3 staging environments",
+        "support": "Priority 24/7 support"
+      },
+      "highlights": [
+        "3 WordPress sites",
+        "100,000 visits/mo",
+        "50 GB NVMe SSD storage",
+        "Unmetered bandwidth",
+        "Free SSL certificates",
+        "14-day daily backups",
+        "3 staging environments",
+        "Automatic core updates",
+        "Plugin & theme updates",
+        "MigraGuard WordPress hardening",
+        "OpenLiteSpeed + LSCache",
+        "WP-CLI + Composer",
+        "Free site migrations",
+        "Priority support queue"
+      ],
+      "popular": true
+    },
+    {
+      "id": "business",
+      "name": "Business",
+      "tagline": "For WooCommerce & high-traffic sites",
+      "description": "Maximum performance for e-commerce and business sites. WooCommerce-optimized.",
+      "pricing": {
+        "monthly": "24.95",
+        "annually": "19.95",
+        "biennially": "17.95",
+        "triennially": "15.95"
+      },
+      "pricingTotals": {
+        "annually": "239.40",
+        "biennially": "430.80",
+        "triennially": "574.20"
+      },
+      "features": {
+        "sites": "10 WordPress sites",
+        "visits": "Up to 400,000 visits/mo",
+        "storage": "100 GB NVMe SSD",
+        "bandwidth": "Unmetered",
+        "ssl": "Free SSL certificates",
+        "backups": "30-day daily backups",
+        "staging": "10 staging environments",
+        "support": "24/7 phone + priority support"
+      },
+      "highlights": [
+        "10 WordPress sites",
+        "400,000 visits/mo",
+        "100 GB NVMe SSD storage",
+        "Unmetered bandwidth",
+        "Free SSL certificates",
+        "30-day daily backups",
+        "10 staging environments",
+        "Automatic core updates",
+        "Plugin & theme updates",
+        "MigraGuard advanced protection",
+        "OpenLiteSpeed + LSCache",
+        "WooCommerce-optimized",
+        "WP-CLI + Composer + Git",
+        "Free site migrations",
+        "Dedicated support agent",
+        "Phone support included"
+      ]
+    },
+    {
+      "id": "agency",
+      "name": "Agency",
+      "tagline": "For agencies managing clients",
+      "description": "Built for agencies and freelancers managing multiple client sites. White-label ready.",
+      "pricing": {
+        "monthly": "39.95",
+        "annually": "32.95",
+        "biennially": "29.95",
+        "triennially": "26.95"
+      },
+      "pricingTotals": {
+        "annually": "395.40",
+        "biennially": "718.80",
+        "triennially": "970.20"
+      },
+      "features": {
+        "sites": "50 WordPress sites",
+        "visits": "Up to 1,000,000 visits/mo",
+        "storage": "250 GB NVMe SSD",
+        "bandwidth": "Unmetered",
+        "ssl": "Free SSL certificates",
+        "backups": "30-day daily backups",
+        "staging": "50 staging environments",
+        "support": "Dedicated account manager"
+      },
+      "highlights": [
+        "50 WordPress sites",
+        "1,000,000 visits/mo",
+        "250 GB NVMe SSD storage",
+        "Unmetered bandwidth",
+        "Free SSL certificates",
+        "30-day daily backups",
+        "50 staging environments",
+        "Automatic core updates",
+        "Plugin & theme updates (configurable)",
+        "MigraGuard advanced protection",
+        "OpenLiteSpeed + LSCache",
+        "WooCommerce-optimized",
+        "WP-CLI + Composer + Git",
+        "Free site migrations (unlimited)",
+        "Dedicated account manager",
+        "White-label options",
+        "Client billing tools",
+        "Phone + Slack support"
+      ]
+    }
+  ],
+  "allPlansInclude": [
+    "Automatic WordPress core updates",
+    "Plugin & theme updates (configurable)",
+    "OpenLiteSpeed web server",
+    "LSCache for WordPress",
+    "Free SSL certificates",
+    "Daily automated backups",
+    "Staging environments",
+    "MigraGuard WordPress hardening",
+    "WP-CLI access",
+    "Malware scanning & removal",
+    "99.9% uptime guarantee",
+    "Free site migrations",
+    "24/7 expert support"
+  ],
+  "vsCompetitors": {
+    "wpengine": {
+      "title": "MigraWP vs WP Engine",
+      "advantages": [
+        "50% lower cost for similar features",
+        "Transparent renewal pricing (no surprises)",
+        "More staging environments per tier",
+        "Dedicated support (not just chatbots)",
+        "Included malware removal (WP Engine charges extra)"
+      ]
+    },
+    "kinsta": {
+      "title": "MigraWP vs Kinsta",
+      "advantages": [
+        "40% cheaper on average",
+        "Longer backup retention (7-30 days vs 14 days)",
+        "No visitor overage fees",
+        "OpenLiteSpeed (as fast as Kinsta's Nginx)",
+        "Real human support 24/7"
+      ]
+    },
+    "flywheel": {
+      "title": "MigraWP vs Flywheel",
+      "advantages": [
+        "Better value for growing sites",
+        "More transparent pricing structure",
+        "WooCommerce optimization on Business+",
+        "Longer backup retention",
+        "Phone support on Business+ plans"
+      ]
+    }
+  }
+}

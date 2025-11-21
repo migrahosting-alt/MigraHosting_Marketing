@@ -1,0 +1,64 @@
+# AFM Guardian (Abigail) Services
+# Start with: docker-compose -f docker-compose.afm.yml up -d
+
+version: '3.8'
+
+services:
+  afm-gateway:
+    build: ./migra-afm-guardian-complete-v2/migra-afm-guardian-complete-v2/services/gateway
+    container_name: afm-gateway
+    ports:
+      - "8080:8080"
+    environment:
+      - PORT=8080
+      - ORCH_URL=http://afm-orchestrator:8090
+      - ALLOWED_ORIGINS=http://localhost:5173,http://localhost:3001
+      # JWT Authentication (RS256)
+      # For mPanel integration, set JWT_PUBLIC_KEY to match mPanel's public key
+      # For demo/testing, leave blank to allow demo.token
+      - JWT_PUBLIC_KEY=${JWT_PUBLIC_KEY:-}
+      - NODE_ENV=development
+    depends_on:
+      - afm-orchestrator
+    networks:
+      - afm-network
+    restart: unless-stopped
+
+  afm-orchestrator:
+    build: ./migra-afm-guardian-complete-v2/migra-afm-guardian-complete-v2/services/orchestrator
+    container_name: afm-orchestrator
+    ports:
+      - "8090:8090"
+    environment:
+      - PORT=8090
+      - ADAPTERS_URL=http://afm-adapters:8095
+      - LLM_API_URL=${LLM_API_URL:-https://api.openai.com/v1}
+      - LLM_API_KEY=${LLM_API_KEY:-}
+      - LLM_MODEL=${LLM_MODEL:-gpt-4o-mini}
+      - NODE_ENV=development
+    depends_on:
+      - afm-adapters
+    networks:
+      - afm-network
+    restart: unless-stopped
+
+  afm-adapters:
+    build: ./migra-afm-guardian-complete-v2/migra-afm-guardian-complete-v2/services/adapters
+    container_name: afm-adapters
+    ports:
+      - "8095:8095"
+    environment:
+      - PORT=8095
+      - PDNS_API_URL=${PDNS_API_URL:-}
+      - PDNS_API_KEY=${PDNS_API_KEY:-}
+      - MPANEL_API_BASE=${MPANEL_API_BASE:-}
+      - MPANEL_API_TOKEN=${MPANEL_API_TOKEN:-}
+      - BACKUP_STORAGE_PATH=${BACKUP_STORAGE_PATH:-/mnt/backups}
+      - NODE_ENV=development
+    networks:
+      - afm-network
+    restart: unless-stopped
+
+networks:
+  afm-network:
+    driver: bridge

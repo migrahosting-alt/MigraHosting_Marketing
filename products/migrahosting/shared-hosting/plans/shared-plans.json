@@ -1,0 +1,234 @@
+{
+  "plans": [
+    {
+      "id": "student",
+      "name": "Student",
+      "tagline": "Free for students",
+      "description": "Perfect for students learning web development. Free while you're in school with academic verification.",
+      "pricing": {
+        "monthly": "0.00",
+        "annually": "0.00",
+        "biennially": "0.00",
+        "triennially": "0.00"
+      },
+      "pricingTotals": {
+        "annually": "0.00",
+        "biennially": "0.00",
+        "triennially": "0.00"
+      },
+      "features": {
+        "storage": "2 GB NVMe SSD",
+        "bandwidth": "50 GB/mo",
+        "websites": "1 (subdomain only)",
+        "databases": "1 MySQL database",
+        "email": "1 mailbox (5GB)",
+        "ssl": "Free SSL certificate",
+        "backups": "3-day backups",
+        "support": "Email support"
+      },
+      "highlights": [
+        "Subdomain only (.migrahosting.net)",
+        "2 GB NVMe SSD storage",
+        "50 GB/mo bandwidth",
+        "1 MySQL database",
+        "1 email mailbox (5GB)",
+        "Free SSL certificate",
+        "3-day daily backups",
+        "MigraGuard basic protection"
+      ],
+      "restrictions": [
+        "Annual billing only",
+        "Academic email verification required",
+        "Renewal requires re-verification"
+      ]
+    },
+    {
+      "id": "starter",
+      "name": "Starter",
+      "tagline": "Perfect for personal sites",
+      "description": "Everything you need to launch your first website. Free domain on yearly+ plans.",
+      "pricing": {
+        "monthly": "7.95",
+        "annually": "1.99",
+        "biennially": "1.69",
+        "triennially": "1.49"
+      },
+      "pricingTotals": {
+        "annually": "23.88",
+        "biennially": "40.56",
+        "triennially": "53.64"
+      },
+      "features": {
+        "storage": "30 GB NVMe SSD",
+        "bandwidth": "Unmetered",
+        "websites": "1 website",
+        "databases": "5 MySQL databases",
+        "email": "10 mailboxes (10GB each)",
+        "ssl": "Free SSL certificate",
+        "backups": "7-day backups",
+        "support": "24/7 email & chat"
+      },
+      "highlights": [
+        "1 website (custom domain)",
+        "30 GB NVMe SSD storage",
+        "Unmetered bandwidth",
+        "5 MySQL databases",
+        "10 email mailboxes (10GB each)",
+        "Free SSL certificate",
+        "7-day daily backups",
+        "Free 1-year domain (on yearly+ plans)",
+        "Free WHOIS privacy",
+        "Free domain forwarding",
+        "MigraGuard basic protection"
+      ],
+      "bonuses": {
+        "domain": "1-year free domain on yearly+ plans",
+        "whoisPrivacy": "Free WHOIS privacy",
+        "forwarding": "Free domain forwarding"
+      }
+    },
+    {
+      "id": "premium",
+      "name": "Premium",
+      "tagline": "Most popular",
+      "description": "For growing businesses and portfolios. Manage multiple sites with ease.",
+      "pricing": {
+        "monthly": "8.95",
+        "annually": "3.19",
+        "biennially": "2.79",
+        "triennially": "2.49"
+      },
+      "pricingTotals": {
+        "annually": "38.28",
+        "biennially": "66.96",
+        "triennially": "89.64"
+      },
+      "features": {
+        "storage": "75 GB NVMe SSD",
+        "bandwidth": "Unmetered",
+        "websites": "Up to 50 websites",
+        "databases": "50 MySQL databases",
+        "email": "50 mailboxes (25GB each)",
+        "ssl": "Free SSL certificates",
+        "backups": "14-day backups",
+        "support": "Priority 24/7 support"
+      },
+      "highlights": [
+        "Up to 50 websites",
+        "75 GB NVMe SSD storage",
+        "Unmetered bandwidth",
+        "50 MySQL databases",
+        "50 email mailboxes (25GB each)",
+        "Free SSL certificates",
+        "14-day daily backups",
+        "Free 1-year domain (on yearly+ plans)",
+        "Free WHOIS privacy",
+        "Free domain forwarding",
+        "Free site migrations",
+        "MigraGuard standard protection",
+        "Priority support queue"
+      ],
+      "bonuses": {
+        "domain": "1-year free domain on yearly+ plans",
+        "whoisPrivacy": "Free WHOIS privacy",
+        "forwarding": "Free domain forwarding",
+        "migrations": "Free site migrations"
+      },
+      "popular": true
+    },
+    {
+      "id": "business",
+      "name": "Business",
+      "tagline": "For agencies & high-traffic sites",
+      "description": "Maximum resources and dedicated support for professional websites.",
+      "pricing": {
+        "monthly": "9.95",
+        "annually": "4.79",
+        "biennially": "4.39",
+        "triennially": "3.99"
+      },
+      "pricingTotals": {
+        "annually": "57.48",
+        "biennially": "105.36",
+        "triennially": "143.64"
+      },
+      "features": {
+        "storage": "100 GB NVMe SSD",
+        "bandwidth": "Unmetered",
+        "websites": "Unlimited websites",
+        "databases": "Unlimited MySQL databases",
+        "email": "Unlimited mailboxes (50GB each)",
+        "ssl": "Free SSL certificates",
+        "backups": "30-day backups",
+        "support": "24/7 phone + dedicated support"
+      },
+      "highlights": [
+        "Unlimited websites",
+        "100 GB NVMe SSD storage",
+        "Unmetered bandwidth",
+        "Unlimited MySQL databases",
+        "Unlimited email mailboxes (50GB each)",
+        "Free SSL certificates",
+        "30-day daily backups",
+        "Free 1-year domain (on yearly+ plans)",
+        "Free WHOIS privacy",
+        "Free domain forwarding",
+        "Free site migrations",
+        "MigraGuard advanced protection",
+        "Dedicated support agent",
+        "Phone support included"
+      ],
+      "bonuses": {
+        "domain": "1-year free domain on yearly+ plans",
+        "whoisPrivacy": "Free WHOIS privacy",
+        "forwarding": "Free domain forwarding",
+        "migrations": "Free site migrations",
+        "dedicatedSupport": "Dedicated support agent"
+      }
+    }
+  ],
+  "allPlansInclude": [
+    "Free SSL certificates (Let's Encrypt)",
+    "NVMe SSD hosting for blazing speed",
+    "Daily automated backups",
+    "Dedicated mail server (MigraMail)",
+    "MigraGuard basic security",
+    "99.9% uptime guarantee",
+    "Easy 1-click app installer",
+    "WordPress-optimized",
+    "Git deployment support",
+    "Free website builder"
+  ],
+  "comparisons": {
+    "vsGoDaddy": {
+      "title": "MigraHosting vs GoDaddy",
+      "advantages": [
+        "50% cheaper renewal rates",
+        "True transparent pricing (no fake promos)",
+        "Better performance (NVMe vs HDD)",
+        "Included backups (GoDaddy charges extra)",
+        "Real human support (not outsourced)"
+      ]
+    },
+    "vsHostGator": {
+      "title": "MigraHosting vs HostGator",
+      "advantages": [
+        "Honest renewal pricing upfront",
+        "NVMe storage (faster than HostGator's SSD)",
+        "Free WHOIS privacy (HostGator charges)",
+        "Better support response times",
+        "No upsells for basic features"
+      ]
+    },
+    "vsBluehost": {
+      "title": "MigraHosting vs Bluehost",
+      "advantages": [
+        "Transparent pricing (no renewal shock)",
+        "Better storage quotas",
+        "Dedicated mail server (not shared)",
+        "Longer backup retention",
+        "No forced WordPress-only hosting"
+      ]
+    }
+  }
+}

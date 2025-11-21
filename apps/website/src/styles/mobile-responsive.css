@@ -1,0 +1,242 @@
+/* Mobile Responsiveness Fixes for MigraHosting Marketing Site */
+
+/* Ensure body doesn't overflow horizontally on mobile */
+body {
+  overflow-x: hidden;
+}
+
+/* Small screens (mobile) - under 640px */
+@media (max-width: 639px) {
+  /* Reduce heading sizes on mobile */
+  h1.font-display {
+    font-size: 1.875rem !important; /* 30px */
+    line-height: 1.2 !important;
+  }
+  
+  h2.font-display {
+    font-size: 1.5rem !important; /* 24px */
+    line-height: 1.3 !important;
+  }
+  
+  h3 {
+    font-size: 1.25rem !important; /* 20px */
+  }
+  
+  /* Reduce padding on sections */
+  section {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  
+  /* Make buttons full width on mobile */
+  .flex-col a, .flex-col button {
+    width: 100%;
+  }
+  
+  /* Reduce button heights on mobile */
+  a.inline-flex[class*="h-14"],
+  a.inline-flex[class*="h-16"],
+  button[class*="h-14"],
+  button[class*="h-16"] {
+    height: 3rem !important; /* 48px */
+    font-size: 0.875rem !important; /* 14px */
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+  
+  /* Make table cells smaller on mobile */
+  td, th {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
+    font-size: 0.875rem !important;
+  }
+  
+  /* Reduce spacing */
+  .py-20 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+  
+  .py-16 {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+  
+  .gap-12 {
+    gap: 2rem !important;
+  }
+  
+  .gap-8 {
+    gap: 1.5rem !important;
+  }
+  
+  /* Make text sizes responsive */
+  .text-xl {
+    font-size: 1rem !important; /* 16px */
+  }
+  
+  .text-2xl {
+    font-size: 1.25rem !important; /* 20px */
+  }
+  
+  .text-3xl {
+    font-size: 1.5rem !important; /* 24px */
+  }
+  
+  .text-4xl {
+    font-size: 1.875rem !important; /* 30px */
+  }
+  
+  .text-5xl {
+    font-size: 2.25rem !important; /* 36px */
+  }
+  
+  /* Reduce grid column count */
+  .sm\:grid-cols-3 {
+    grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+  }
+  
+  /* Make domain search input smaller */
+  input[type="text"], input[type="email"] {
+    font-size: 1rem !important;
+  }
+  
+  /* Floating badges - hide some on very small screens */
+  .absolute.-top-8,
+  .absolute.top-1\/4 {
+    display: none;
+  }
+}
+
+/* Medium screens (tablets) - 640px to 1023px */
+@media (min-width: 640px) and (max-width: 1023px) {
+  h1.font-display {
+    font-size: 2.5rem !important; /* 40px */
+  }
+  
+  h2.font-display {
+    font-size: 2rem !important; /* 32px */
+  }
+  
+  .py-20 {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+  }
+}
+
+/* Ensure images don't overflow */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Make feature cards stack on mobile */
+@media (max-width: 767px) {
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+  }
+  
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+  }
+}
+
+/* Tables - ensure they scroll horizontally on mobile */
+@media (max-width: 767px) {
+  table {
+    font-size: 0.75rem !important; /* 12px */
+  }
+  
+  th, td {
+    padding: 0.5rem !important;
+    white-space: nowrap;
+  }
+}
+
+/* Fix PlanChooser component on mobile */
+@media (max-width: 639px) {
+  /* Make plan chooser questions stack */
+  .lg\:grid-cols-3 {
+    grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+  }
+  
+  .sm\:grid-cols-3 {
+    grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+  }
+  
+  /* Make plan cards full width */
+  .lg\:grid-cols-3 > div,
+  .md\:grid-cols-3 > div {
+    min-height: auto !important;
+  }
+}
+
+/* Fix form inputs on mobile */
+@media (max-width: 639px) {
+  input, select, textarea {
+    font-size: 16px !important; /* Prevents iOS zoom */
+  }
+}
+
+/* Responsive container max-widths */
+.max-w-7xl {
+  width: 100%;
+}
+
+@media (max-width: 639px) {
+  .max-w-7xl,
+  .max-w-6xl,
+  .max-w-5xl,
+  .max-w-4xl,
+  .max-w-3xl {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+
+/* Fix pricing grid on mobile */
+@media (max-width: 767px) {
+  .pricing-card {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Ensure modal/overlays don't break mobile */
+@media (max-width: 639px) {
+  .fixed.inset-0 {
+    overflow-y: auto;
+  }
+  
+  dialog, .dialog {
+    max-width: 95vw;
+    margin: 1rem auto;
+  }
+}
+
+/* Fix footer on mobile */
+@media (max-width: 639px) {
+  footer .grid {
+    grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+    gap: 2rem !important;
+  }
+}
+
+/* Prevent text overflow */
+* {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Fix comparison table specifically */
+@media (max-width: 767px) {
+  .comparison-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .comparison-table-wrapper table {
+    min-width: 600px;
+  }
+}
