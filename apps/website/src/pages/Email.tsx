@@ -1,9 +1,10 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
+import { EMAIL_PRICES } from "../lib/catalog";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { PricingGrid } from "../components/PricingGrid";
+import { MigraMailPricingSection } from "@products/migramail/ui/MigraMailPricingSection";
 
 function MailIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -197,22 +198,7 @@ export default function Email() {
         </section>
 
         {/* Pricing */}
-        <section className="border-y border-white/10 bg-white/5" id="pricing">
-          <div className="mx-auto max-w-7xl px-4 py-16">
-            <div className="text-center mb-10">
-              <h2 className="font-display text-3xl font-extrabold sm:text-4xl text-white">
-                Professional Email Pricing
-              </h2>
-              <p className="mt-3 text-white/80 max-w-2xl mx-auto">
-                Secure business email with unlimited aliases and advanced spam protection.
-                <strong className="block mt-2 text-emerald-400">
-                  30-day money-back guarantee
-                </strong>
-              </p>
-            </div>
-            <PricingGrid variant="landing" showIntro={false} />
-          </div>
-        </section>
+        <MigraMailPricingSection variant="landing" showIntro={true} />
 
         {/* CTA */}
         <section className="mx-auto max-w-4xl px-4 py-20">

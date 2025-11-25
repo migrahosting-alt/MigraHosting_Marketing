@@ -1,9 +1,10 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
+import { WORDPRESS_PRICES } from "../lib/catalog";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { PricingGrid } from "../components/PricingGrid";
+import { ManagedWpPricingSection } from "@products/migrawp/ui/ManagedWpPricingSection";
 
 function WordPressIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -209,22 +210,7 @@ export default function ManagedWordPress() {
         </section>
 
         {/* Pricing */}
-        <section className="border-y border-white/10 bg-white/5" id="pricing">
-          <div className="mx-auto max-w-7xl px-4 py-16">
-            <div className="text-center mb-10">
-              <h2 className="font-display text-3xl font-extrabold sm:text-4xl text-white">
-                Managed WordPress Pricing
-              </h2>
-              <p className="mt-3 text-white/80 max-w-2xl mx-auto">
-                We handle updates, backups, and security. You focus on your content.
-                <strong className="block mt-2 text-emerald-400">
-                  Free site migrations on all plans
-                </strong>
-              </p>
-            </div>
-            <PricingGrid variant="landing" showIntro={false} />
-          </div>
-        </section>
+        <ManagedWpPricingSection variant="landing" showIntro={true} />
 
         {/* CTA */}
         <section className="mx-auto max-w-4xl px-4 py-20">
