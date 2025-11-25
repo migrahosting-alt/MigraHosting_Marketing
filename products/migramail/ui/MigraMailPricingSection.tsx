@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { useCart } from "@/context/CartContext";
+import { useCart } from "../../../apps/website/src/context/CartContext.tsx";
 
 interface MigraMailPricingSectionProps {
   variant?: "landing" | "pricing";

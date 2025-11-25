@@ -1,10 +1,9 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import { VPS_PRICES, CLOUD_PRICES } from "../lib/catalog";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { VpsCloudPricingSection } from "@products/migravps/ui/VpsCloudPricingSection";
+import { PricingGrid } from "../components/PricingGrid";
 
 function ServerIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -253,7 +252,22 @@ export default function VpsCloud() {
         </section>
 
         {/* Pricing */}
-        <VpsCloudPricingSection variant="landing" showIntro={true} />
+        <section className="border-y border-white/10 bg-white/5" id="pricing">
+          <div className="mx-auto max-w-7xl px-4 py-16">
+            <div className="text-center mb-10">
+              <h2 className="font-display text-3xl font-extrabold sm:text-4xl text-white">
+                VPS & Cloud Pricing
+              </h2>
+              <p className="mt-3 text-white/80 max-w-2xl mx-auto">
+                Scalable cloud infrastructure with full root access and guaranteed resources.
+                <strong className="block mt-2 text-emerald-400">
+                  Deploy in seconds with our 1-click installer
+                </strong>
+              </p>
+            </div>
+            <PricingGrid variant="landing" showIntro={false} />
+          </div>
+        </section>
 
         {/* CTA */}
         <section className="mx-auto max-w-4xl px-4 py-20">
