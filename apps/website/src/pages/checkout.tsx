@@ -498,10 +498,14 @@ export default function CheckoutPage() {
           </form>
         </div>
       </main>
+      <Footer />
+    </>
     );
   }
 
   return (
+    <>
+    <Header />
     <main className="min-h-screen bg-[#050816] text-slate-100">
       <div className="mx-auto max-w-3xl px-4 py-16">
         <h1 className="font-display text-3xl font-bold text-white">Checkout</h1>
@@ -534,6 +538,12 @@ export default function CheckoutPage() {
               ))}
             </section>
 
+            {/* Add-on Upsells */}
+            <CheckoutUpsells
+              selectedAddonIds={selectedAddonIds}
+              onToggleAddon={handleToggleAddon}
+            />
+
             <aside className="rounded-2xl border border-white/10 bg-white/5 p-5">
               <h2 className="text-lg font-semibold text-white">Order summary</h2>
               <div className="mt-4 space-y-3 text-sm">
@@ -561,5 +571,7 @@ export default function CheckoutPage() {
         )}
       </div>
     </main>
+    <Footer />
+    </>
   );
 }
