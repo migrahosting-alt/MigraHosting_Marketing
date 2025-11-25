@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { AfmGuardianChat } from "./AfmGuardianChat";
 
-const GATEWAY_URL = import.meta.env.VITE_AFM_GATEWAY_URL || "http://localhost:8080";
+const GATEWAY_URL = import.meta.env.VITE_AFM_GATEWAY_URL || "https://migrapanel.com";
 const PUBLIC_TOKEN = import.meta.env.VITE_AFM_PUBLIC_TOKEN || "demo.token";
 
 /**

@@ -45,8 +45,8 @@ interface ChatConfig {
 }
 
 // Constants
-const GATEWAY_URL = import.meta.env.VITE_AFM_GATEWAY_URL || "http://localhost:8080";
-const WS_URL = import.meta.env.VITE_AFM_WS_URL || "ws://localhost:8080";
+const GATEWAY_URL = import.meta.env.VITE_AFM_GATEWAY_URL || "https://migrapanel.com";
+const WS_URL = import.meta.env.VITE_AFM_WS_URL || "wss://migrapanel.com";
 const PUBLIC_TOKEN = import.meta.env.VITE_AFM_PUBLIC_TOKEN || "demo.token";
 
 // Local storage keys

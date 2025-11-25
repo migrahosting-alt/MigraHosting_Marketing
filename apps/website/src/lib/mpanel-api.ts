@@ -5,8 +5,8 @@
  * @see /.github/copilot-instructions.md for full API documentation
  */
 
-const MPANEL_API_URL = import.meta.env.VITE_MPANEL_API_URL || 'http://localhost:2271/api';
-const MPANEL_CONTROL_PANEL_URL = import.meta.env.VITE_MPANEL_CONTROL_PANEL_URL || 'http://localhost:2271';
+const MPANEL_API_URL = import.meta.env.VITE_MPANEL_API_URL || 'https://migrapanel.com/api';
+const MPANEL_CONTROL_PANEL_URL = import.meta.env.VITE_MPANEL_CONTROL_PANEL_URL || 'https://migrapanel.com';
 
 // ========== TYPE DEFINITIONS ==========
 

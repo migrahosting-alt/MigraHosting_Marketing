@@ -10,6 +10,7 @@ import Home from "./pages/Home.jsx";
 import Pricing from "./pages/pricing";
 import Checkout from "./pages/checkout";
 import CheckoutSuccess from "./pages/CheckoutSuccess";
+import ThankYou from "./pages/ThankYou";
 import Signup from "./pages/Signup.jsx";
 import Cart from "./pages/cart.tsx";
 import Domains from "./pages/Domains";
@@ -74,6 +75,7 @@ export default function App() {
         <Route path="/contact" element={<><Header /><Contact /><Footer /></>} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/checkout/success" element={<CheckoutSuccess />} />
+        <Route path="/thank-you" element={<ThankYou />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/cart" element={<Cart />} />
         

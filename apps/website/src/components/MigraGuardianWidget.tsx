@@ -35,7 +35,7 @@ interface MigraGuardianConfig {
 // Environment configuration
 const DEFAULT_CONFIG: MigraGuardianConfig = {
   token: import.meta.env.VITE_GUARDIAN_TOKEN || 'guardian_demo_token',
-  gatewayUrl: import.meta.env.VITE_GUARDIAN_GATEWAY_URL || 'http://localhost:8080/guardian',
+  gatewayUrl: import.meta.env.VITE_GUARDIAN_GATEWAY_URL || 'https://migrapanel.com/guardian',
   title: 'Need Help?',
   subtitle: 'Ask our AI assistant anything!',
   primaryColor: '#6A5CFF', // Match MigraHosting brand

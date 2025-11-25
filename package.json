@@ -16,7 +16,8 @@
     "preview:website": "node ./.yarn/releases/yarn-4.3.1.cjs workspace @migrahosting/website preview",
     "server:dev": "node ./.yarn/releases/yarn-4.3.1.cjs node mpanel-main/mpanel-main/src/server.js",
     "dev": "node ./.yarn/releases/yarn-4.3.1.cjs workspace @migrahosting/website dev",
-    "build": "node ./.yarn/releases/yarn-4.3.1.cjs workspace @migrahosting/website build",
+    "build": "yarn workspace @migrahosting/website build",
+    "deploy": "./deploy-to-srv1.sh",
     "deploy:srv1": "bash ~/deploy_migra_marketing_to_srv1.sh",
     "dev:full": "concurrently \"node ./.yarn/releases/yarn-4.3.1.cjs server:dev\" \"node ./.yarn/releases/yarn-4.3.1.cjs workspace @migrahosting/website dev\""
   },

@@ -5,7 +5,7 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import { Helmet } from 'react-helmet-async';
 
-const CMS_API_URL = import.meta.env.VITE_CMS_API_URL || 'http://localhost:4243/api/cms';
+const CMS_API_URL = import.meta.env.VITE_CMS_API_URL || 'https://migrapanel.com/api/cms';
 
 // Icon Components
 function CalendarIcon(props: React.SVGProps<SVGSVGElement>) {

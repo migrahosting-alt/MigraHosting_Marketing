@@ -509,7 +509,7 @@ app.post('/api/checkout', async (req, res) => {
     const sessionConfig = {
       mode,
       line_items: checkoutLineItems,
-      success_url: success_url || 'http://localhost:5173/checkout/success',
+      success_url: success_url || 'http://localhost:5173/checkout/success?session_id={CHECKOUT_SESSION_ID}',
       cancel_url: cancel_url || 'http://localhost:5173/pricing',
       locale: stripeLocale,
       // Optional: add customer email, billing address collection
@@ -533,6 +533,54 @@ app.post('/api/checkout', async (req, res) => {
     return res.json({ url: session.url, id: session.id });
   } catch (err) {
     console.error('[checkout] error:', err);
+    return res.status(500).json({ error: err.message });
+  }
+});
+
+/**
+ * GET /api/marketing/checkout-session/:sessionId
+ * Poll checkout session status for success page
+ */
+app.get('/api/marketing/checkout-session/:sessionId', async (req, res) => {
+  try {
+    const { sessionId } = req.params;
+    
+    // Retrieve session from Stripe
+    const session = await stripe.checkout.sessions.retrieve(sessionId, {
+      expand: ['subscription', 'customer'],
+    });
+    
+    // Check if we have a subscription record in our database
+    const { PrismaClient } = await import('@prisma/client');
+    const prisma = new PrismaClient();
+    
+    const subscription = await prisma.subscription.findUnique({
+      where: { checkoutSessionId: sessionId },
+      include: {
+        customer: true,
+      },
+    });
+    
+    await prisma.$disconnect();
+    
+    return res.json({
+      success: true,
+      session: {
+        id: session.id,
+        status: session.status,
+        payment_status: session.payment_status,
+        customer_email: session.customer_details?.email || session.customer_email,
+      },
+      subscription: subscription ? {
+        id: subscription.id,
+        status: subscription.status,
+        tenantId: subscription.tenantId,
+        provisioningStatus: subscription.provisioningStatus,
+        planName: subscription.planName,
+      } : null,
+    });
+  } catch (err) {
+    console.error('[checkout-session] error:', err);
     return res.status(500).json({ error: err.message });
   }
 });

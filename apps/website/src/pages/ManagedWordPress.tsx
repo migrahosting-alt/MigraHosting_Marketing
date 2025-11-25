@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { WORDPRESS_PRICES } from "../lib/catalog";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { ManagedWpPricingSection } from "../../../../products/migrawp/ui/ManagedWpPricingSection";
+import { ManagedWpPricingSection } from "@products/migrawp/ui/ManagedWpPricingSection";
 
 function WordPressIcon(props: React.SVGProps<SVGSVGElement>) {
   return (

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { EMAIL_PRICES } from "../lib/catalog";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { MigraMailPricingSection } from "../../../../products/migramail/ui/MigraMailPricingSection";
+import { MigraMailPricingSection } from "@products/migramail/ui/MigraMailPricingSection";
 
 function MailIcon(props: React.SVGProps<SVGSVGElement>) {
   return (

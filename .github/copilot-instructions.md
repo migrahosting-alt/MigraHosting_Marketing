@@ -2,7 +2,45 @@
 
 **Project**: MigraHosting Marketing Website  
 **Control Panel Integration**: mPanel v1.0.0 (http://localhost:2271)  
-**Last Updated**: November 17, 2025
+**Last Updated**: November 23, 2025
+
+---
+
+## ⚠️ CRITICAL: Deployment & Build Process
+
+### ✅ ALWAYS Use This Deployment Method
+```bash
+./deploy-to-srv1.sh        # Production deploy (builds + uploads)
+```
+
+### ✅ Build Commands
+```bash
+yarn build                 # Builds to apps/website/dist/
+yarn workspace @migrahosting/website build  # Same as above
+```
+
+### 🚫 NEVER Use These
+```bash
+npm run build              # OLD/BROKEN - used to create dual bundles
+cd apps/website && npm run build && cd ../.. && mkdir -p dist && cp -r apps/website/dist/* dist/
+```
+
+### 📁 Build Output Locations
+- ✅ **Correct**: `apps/website/dist/` (single source of truth)
+- ❌ **Never use**: Top-level `/dist/` (deleted, gitignored)
+
+### 🐛 Why This Matters
+Previous dual-build system caused:
+- Old bundles (index-CfEDkCjL.js) being deployed alongside new ones (index-Cz4CRS3V.js)
+- Browser loading wrong bundle with outdated code
+- "Domain-only checkout coming soon" message persisting after fix
+- Environment variables not being applied
+
+### 🔧 What Was Fixed (Nov 23, 2025)
+1. Removed top-level `dist/` folder and added to `.gitignore`
+2. Simplified `package.json` "build" script to only build workspace
+3. Updated `deploy-to-srv1.sh` to deploy directly from `apps/website/dist/`
+4. Added `yarn deploy` shortcut
 
 ---
 
@@ -162,17 +200,30 @@ cd frontend && npm run dev  # Start frontend (port 2272)
 # Install dependencies
 yarn install
 
-# Run marketing website dev server
-yarn workspace @migrahosting/website dev
+# Development
+yarn dev                                      # Start dev server (localhost:5173)
+yarn workspace @migrahosting/website dev      # Same as above
 
-# Build for production
+# Production Build & Deploy
+./deploy-to-srv1.sh                          # ✅ ONE-COMMAND DEPLOY
+yarn build                                   # Build only (to apps/website/dist/)
+yarn deploy                                  # Alias for ./deploy-to-srv1.sh
+
+# Backend API (Stripe)
+cd server && node index.js                   # Start on port 4242
+
+# Lint
+yarn workspace @migrahosting/website lint
+```
+
+### Manual Deployment (if script unavailable)
+```bash
+# 1. Build locally
+rm -rf apps/website/dist
 yarn workspace @migrahosting/website build
 
-# Lint code
-yarn workspace @migrahosting/website lint
-
-# Start backend API
-cd server && node index.js
+# 2. Deploy to server
+rsync -avz --delete apps/website/dist/ root@srv1:/var/www/migrahosting.com/html/
 ```
 
 ---

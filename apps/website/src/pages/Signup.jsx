@@ -165,7 +165,7 @@ export default function SignupPage() {
 
       if (data.success && data.data) {
         // Success! Redirect to control panel for password setup
-        const mpanelUrl = import.meta.env.VITE_MPANEL_CONTROL_PANEL_URL || 'http://localhost:2271';
+        const mpanelUrl = import.meta.env.VITE_MPANEL_CONTROL_PANEL_URL || 'https://migrapanel.com';
         const resetURL = `${mpanelUrl}/set-password?token=${data.data.reset_token}`;
         
         // Show success message

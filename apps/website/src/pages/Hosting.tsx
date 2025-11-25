@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { openChat } from "../components/GlobalAfmChat";
-import HostingPricingSection from "../../../../products/migrahosting/ui/HostingPricingSection";
-import HostingCompareSection from "../../../../products/migrahosting/ui/HostingCompareSection";
+import HostingPricingSection from "@products/migrahosting/ui/HostingPricingSection";
+import HostingCompareSection from "@products/migrahosting/ui/HostingCompareSection";
 
 function ShieldIcon(props: React.SVGProps<SVGSVGElement>) {
   return (

@@ -99,7 +99,7 @@ export default function Header() {
   const mPanelUrl =
     import.meta.env.VITE_MPANEL_CONTROL_PANEL_URL ||
     import.meta.env.VITE_MPANEL_URL ||
-    "http://localhost:2271";
+    "https://migrapanel.com";
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-900/95 backdrop-blur-xl">

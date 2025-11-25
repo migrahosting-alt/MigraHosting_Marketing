@@ -6,7 +6,7 @@ import { PricingGrid } from "../components/PricingGrid";
 import PlanChooser from "../components/PlanChooser";
 import SystemStatusBadge from "../components/SystemStatusBadge";
 
-const CMS_API_URL = import.meta.env.VITE_CMS_API_URL || 'http://localhost:4243/api/cms';
+const CMS_API_URL = import.meta.env.VITE_CMS_API_URL || 'https://migrapanel.com/api/cms';
 
 function AnimatedGradient({ className = "" }) {
   return (

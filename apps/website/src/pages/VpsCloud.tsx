@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { VPS_PRICES, CLOUD_PRICES } from "../lib/catalog";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { VpsCloudPricingSection } from "../../../../products/migravps/ui/VpsCloudPricingSection";
+import { VpsCloudPricingSection } from "@products/migravps/ui/VpsCloudPricingSection";
 
 function ServerIcon(props: React.SVGProps<SVGSVGElement>) {
   return (

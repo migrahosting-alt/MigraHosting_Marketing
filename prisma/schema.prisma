@@ -7,16 +7,22 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+// ========== CUSTOMERS ==========
 model Customer {
   id        String   @id @default(cuid())
   email     String   @unique
   stripeId  String?  @unique
   name      String?
+  tenantId  String?  // mPanel tenant ID (linked after provisioning)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  orders    Order[]
+  
+  orders         Order[]
+  subscriptions  Subscription[]
+  paymentMethods PaymentMethod[]
 }
 
+// ========== PRODUCTS & PRICING ==========
 model Plan {
   id        String   @id
   name      String
@@ -24,9 +30,12 @@ model Plan {
   priceId   String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  orders    Order[]
+  
+  orders             Order[]
+  subscriptionItems  SubscriptionItem[]
 }
 
+// ========== ORDERS (Legacy - for one-time payments) ==========
 model Order {
   id              String    @id @default(cuid())
   mode            String
@@ -40,7 +49,175 @@ model Order {
   currency        String
   paymentIntentId String?   @unique
   subscriptionId  String?   @unique
-  metadata        String?
+  metadata        String?   // JSON string
   createdAt       DateTime  @default(now())
   updatedAt       DateTime  @updatedAt
+}
+
+// ========== SUBSCRIPTIONS (Stripe recurring billing) ==========
+model Subscription {
+  id                     String    @id @default(cuid())
+  customerId             String?
+  customer               Customer? @relation(fields: [customerId], references: [id])
+  
+  // Stripe IDs
+  stripeCustomerId       String
+  stripeSubscriptionId   String    @unique
+  checkoutSessionId      String?   @unique
+  
+  // Status
+  status                 String    // incomplete, trialing, active, past_due, canceled, unpaid
+  
+  // Tenant linkage
+  tenantId               String?   // mPanel tenant ID (set after provisioning)
+  
+  // Billing cycle
+  currentPeriodStart     DateTime
+  currentPeriodEnd       DateTime
+  trialEnd               DateTime?
+  canceledAt             DateTime?
+  cancelAtPeriodEnd      Boolean   @default(false)
+  
+  // Metadata
+  planName               String
+  planInterval           String    // month or year
+  amountTotal            Int       // in cents
+  currency               String    @default("usd")
+  metadata               String?   // JSON string (UTM params, etc.)
+  
+  // Provisioning
+  provisioningStatus     String    @default("pending") // pending, in_progress, completed, failed
+  provisioningError      String?
+  provisionedAt          DateTime?
+  
+  createdAt              DateTime  @default(now())
+  updatedAt              DateTime  @updatedAt
+  
+  items                  SubscriptionItem[]
+  invoices               Invoice[]
+  provisioningLogs       ProvisioningLog[]
+  
+  @@index([stripeCustomerId])
+  @@index([tenantId])
+  @@index([status])
+  @@index([provisioningStatus])
+}
+
+// ========== SUBSCRIPTION ITEMS (Line items) ==========
+model SubscriptionItem {
+  id                       String       @id @default(cuid())
+  subscriptionId           String
+  subscription             Subscription @relation(fields: [subscriptionId], references: [id], onDelete: Cascade)
+  
+  stripeSubscriptionItemId String       @unique
+  stripePriceId            String
+  stripeProductId          String
+  
+  planId                   String?
+  plan                     Plan?        @relation(fields: [planId], references: [id])
+  
+  productName              String
+  quantity                 Int          @default(1)
+  unitAmount               Int          // in cents
+  currency                 String       @default("usd")
+  
+  createdAt                DateTime     @default(now())
+  updatedAt                DateTime     @updatedAt
+  
+  @@index([subscriptionId])
+}
+
+// ========== INVOICES ==========
+model Invoice {
+  id                   String        @id @default(cuid())
+  subscriptionId       String?
+  subscription         Subscription? @relation(fields: [subscriptionId], references: [id])
+  
+  stripeInvoiceId      String        @unique
+  stripeCustomerId     String
+  
+  status               String        // draft, open, paid, void, uncollectible
+  
+  amountDue            Int
+  amountPaid           Int
+  amountRemaining      Int
+  subtotal             Int
+  total                Int
+  currency             String        @default("usd")
+  
+  created              DateTime
+  dueDate              DateTime?
+  periodStart          DateTime?
+  periodEnd            DateTime?
+  
+  paid                 Boolean       @default(false)
+  attempted            Boolean       @default(false)
+  nextPaymentAttempt   DateTime?
+  
+  invoicePdf           String?
+  hostedInvoiceUrl     String?
+  
+  createdAt            DateTime      @default(now())
+  updatedAt            DateTime      @updatedAt
+  
+  @@index([stripeCustomerId])
+  @@index([subscriptionId])
+}
+
+// ========== PAYMENT METHODS ==========
+model PaymentMethod {
+  id                    String    @id @default(cuid())
+  customerId            String
+  customer              Customer  @relation(fields: [customerId], references: [id])
+  
+  stripePaymentMethodId String    @unique
+  stripeCustomerId      String
+  
+  type                  String    // card, paypal, etc.
+  cardBrand             String?   // visa, mastercard, amex
+  cardLast4             String?
+  cardExpMonth          Int?
+  cardExpYear           Int?
+  
+  isDefault             Boolean   @default(false)
+  
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @updatedAt
+  
+  @@index([customerId])
+}
+
+// ========== PROVISIONING LOG ==========
+model ProvisioningLog {
+  id               String       @id @default(cuid())
+  subscriptionId   String
+  subscription     Subscription @relation(fields: [subscriptionId], references: [id], onDelete: Cascade)
+  
+  action           String       // create_tenant, provision_services, send_welcome
+  status           String       // pending, success, failed
+  
+  requestPayload   String?      // JSON
+  responsePayload  String?      // JSON
+  errorMessage     String?
+  
+  createdAt        DateTime     @default(now())
+  
+  @@index([subscriptionId])
+}
+
+// ========== WEBHOOK EVENTS (Idempotency) ==========
+model WebhookEvent {
+  id             String    @id @default(cuid())
+  stripeEventId  String    @unique
+  eventType      String
+  
+  processed      Boolean   @default(false)
+  processedAt    DateTime?
+  
+  payload        String    // Full JSON payload
+  
+  createdAt      DateTime  @default(now())
+  
+  @@index([eventType])
+  @@index([processed])
 }
