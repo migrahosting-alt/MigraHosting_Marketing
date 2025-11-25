@@ -55,15 +55,37 @@ const sanitizeItems = (items: CartItem[]): CartItem[] => {
   return Array.from(seen.values());
 };
 
+const CART_VERSION = "v3"; // Increment to force cart reset
 const initialState: CartState = { items: [] };
 
 const loadInitialState = (): CartState => {
   if (typeof window === "undefined") return initialState;
   try {
+    // Check cart version
+    const version = localStorage.getItem("mh_cart_version");
+    if (version !== CART_VERSION) {
+      // Clear old cart and set new version
+      localStorage.removeItem("mh_cart");
+      localStorage.setItem("mh_cart_version", CART_VERSION);
+      return initialState;
+    }
+    
     const raw = localStorage.getItem("mh_cart");
     if (!raw) return initialState;
     const parsed = JSON.parse(raw) as CartState;
     if (!Array.isArray(parsed.items)) return initialState;
+    
+    // Enforce single hosting plan rule during load
+    const hostingItems = parsed.items.filter(item => item.type === "hosting");
+    if (hostingItems.length > 1) {
+      // Keep only the last hosting plan
+      const lastHosting = hostingItems[hostingItems.length - 1];
+      const cleanedItems = parsed.items.filter(item => 
+        item.type !== "hosting" || sameKey(item, lastHosting)
+      );
+      return { items: sanitizeItems(cleanedItems) };
+    }
+    
     return { items: sanitizeItems(parsed.items) };
   } catch {
     return initialState;
@@ -125,6 +147,19 @@ function reducer(state: CartState, action: CartAction): CartState {
 export function CartProvider({ children }: { children: React.ReactNode }) {
   const [state, dispatch] = useReducer(reducer, undefined, loadInitialState);
 
+  // IMMEDIATE CLEANUP: Remove duplicate hosting plans on mount
+  useEffect(() => {
+    const hostingItems = state.items.filter(item => item.type === "hosting");
+    if (hostingItems.length > 1) {
+      // Keep only the first hosting plan, remove all others
+      const firstHosting = hostingItems[0];
+      const cleanedItems = state.items.filter(item => 
+        item.type !== "hosting" || sameKey(item, firstHosting)
+      );
+      dispatch({ type: "SET_ITEMS", payload: cleanedItems });
+    }
+  }, []); // Run once on mount
+
   useEffect(() => {
     if (typeof window !== "undefined") {
       localStorage.setItem("mh_cart", JSON.stringify(state));
@@ -138,23 +173,27 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       items: state.items,
       totalQuantity,
       addItem: (item: CartItem): AddResult => {
+        // ENFORCE: Only ONE hosting plan allowed in cart at a time
+        if (item.type === "hosting") {
+          const existingHostingIndex = state.items.findIndex((cartItem) => cartItem.type === "hosting");
+          
+          if (existingHostingIndex >= 0) {
+            const existing = state.items[existingHostingIndex];
+            if (existing.type === "hosting" && existing.plan === item.plan && existing.term === item.term) {
+              return "duplicate";
+            }
+            // REPLACE the existing hosting plan with the new one
+            const nonHostingItems = state.items.filter((cartItem) => cartItem.type !== "hosting");
+            const next = [...nonHostingItems, { ...item, quantity: 1 }];
+            dispatch({ type: "SET_ITEMS", payload: next });
+            return "replaced";
+          }
+        }
+        
         // Check for existing item
         const existingIndex = state.items.findIndex((cartItem) => sameKey(cartItem, item));
         
         if (existingIndex >= 0) {
-          const existing = state.items[existingIndex];
-          
-          // For hosting items, replace if different plan/term
-          if (item.type === "hosting") {
-            if (existing.type === "hosting" && existing.plan === item.plan && existing.term === item.term) {
-              return "duplicate";
-            }
-            const next = [...state.items];
-            next[existingIndex] = item;
-            dispatch({ type: "SET_ITEMS", payload: next });
-            return "replaced";
-          }
-          
           // For domains and emails, don't allow duplicates or quantity increments
           if (item.type === "domain" || item.type === "email") {
             return "duplicate";

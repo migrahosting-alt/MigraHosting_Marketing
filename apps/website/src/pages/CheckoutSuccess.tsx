@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { Link, useSearchParams } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import AfterPurchaseUpsells from "../components/checkout/AfterPurchaseUpsells";
 
 export default function CheckoutSuccess() {
   const [searchParams] = useSearchParams();
@@ -127,6 +128,9 @@ export default function CheckoutSuccess() {
               </Link>
             </div>
           </div>
+
+          {/* After Purchase Upsells */}
+          <AfterPurchaseUpsells />
         </div>
       </main>
 

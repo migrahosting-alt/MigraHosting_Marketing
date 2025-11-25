@@ -5,6 +5,7 @@ import { useCart } from "../context/CartContext";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { openGuardianChat } from "../components/MigraGuardianWidget";
+import UpsellAddonsSection, { type AddonItem } from "../components/cart/UpsellAddonsSection";
 
 const formatTitle = (item: any) => {
   if (item.type === "hosting" && item.plan) {
@@ -12,6 +13,9 @@ const formatTitle = (item: any) => {
   }
   if (item.type === "domain" && item.domain) {
     return item.domain;
+  }
+  if (item.type === "addon" && item.name) {
+    return item.name;
   }
   return item.id;
 };
@@ -169,6 +173,15 @@ export default function CartPage() {
                       {item.type === "domain" && (
                         <p className="text-sm text-slate-400">Domain Registration - 1 Year</p>
                       )}
+                      {item.type === "addon" && item.description && (
+                        <p className="text-sm text-slate-400">{item.description}</p>
+                      )}
+                      {item.type === "addon" && item.price && (
+                        <p className="text-sm text-slate-300 mt-1">
+                          ${(item.price / 100).toFixed(2)}
+                          {item.interval && `/${item.interval === 'month' ? 'mo' : item.interval === 'year' ? 'yr' : item.interval}`}
+                        </p>
+                      )}
                       
                       {/* Quantity Controls */}
                       <div className="flex items-center gap-3 mt-2">
@@ -205,6 +218,25 @@ export default function CartPage() {
                   </div>
                 ))}
               </div>
+
+              {/* Add-on Upsells Section */}
+              {items.length > 0 && (
+                <UpsellAddonsSection
+                  onAddAddon={(addon) => {
+                    addItem({
+                      id: addon.id,
+                      type: "addon",
+                      name: addon.name,
+                      description: addon.description,
+                      price: addon.price,
+                      interval: addon.interval,
+                      currency: addon.currency,
+                      quantity: 1,
+                    });
+                  }}
+                  isInCart={(addonId) => items.some((item) => item.id === addonId)}
+                />
+              )}
 
               <div className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
                 <button

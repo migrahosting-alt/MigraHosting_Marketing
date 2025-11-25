@@ -1,0 +1,74 @@
+[
+  {
+    "id": "addon-ssl-premium",
+    "name": "Premium SSL Certificate",
+    "shortName": "Premium SSL",
+    "description": "Boost trust with a premium SSL certificate and site seal. Includes $1M warranty and green address bar.",
+    "price": 999,
+    "interval": "year",
+    "currency": "usd",
+    "type": "addon",
+    "badge": "Security",
+    "icon": "shield-check"
+  },
+  {
+    "id": "addon-backups-daily",
+    "name": "Daily Backups (30-day retention)",
+    "shortName": "Daily Backups",
+    "description": "Automatic daily backups with 30-day retention for peace of mind. Restore with one click.",
+    "price": 499,
+    "interval": "month",
+    "currency": "usd",
+    "type": "addon",
+    "badge": "Protection",
+    "icon": "database"
+  },
+  {
+    "id": "addon-priority-support",
+    "name": "Priority Support",
+    "shortName": "Priority Support",
+    "description": "Jump the queue with priority support. Get help from senior engineers within 15 minutes.",
+    "price": 1999,
+    "interval": "month",
+    "currency": "usd",
+    "type": "addon",
+    "badge": "Support",
+    "icon": "headset"
+  },
+  {
+    "id": "addon-storage-100gb",
+    "name": "Extra Storage - 100GB",
+    "shortName": "100GB Storage",
+    "description": "Add 100GB of premium SSD storage to your hosting plan. Perfect for media-heavy sites.",
+    "price": 799,
+    "interval": "month",
+    "currency": "usd",
+    "type": "addon",
+    "badge": "Storage",
+    "icon": "hard-drive"
+  },
+  {
+    "id": "addon-cdn-basic",
+    "name": "Global CDN",
+    "shortName": "CDN",
+    "description": "Accelerate your site globally with our CDN. Reduce load times by up to 60%.",
+    "price": 599,
+    "interval": "month",
+    "currency": "usd",
+    "type": "addon",
+    "badge": "Performance",
+    "icon": "zap"
+  },
+  {
+    "id": "addon-monitoring",
+    "name": "Advanced Monitoring & Alerts",
+    "shortName": "Monitoring",
+    "description": "24/7 uptime monitoring with instant alerts via email, SMS, and Slack.",
+    "price": 399,
+    "interval": "month",
+    "currency": "usd",
+    "type": "addon",
+    "badge": "Monitoring",
+    "icon": "activity"
+  }
+]
